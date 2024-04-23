@@ -66,7 +66,7 @@ class SequentialTargets:
         raise NotImplementedError
 
     def sample_initial_particles(self, N: int) -> npt.NDArray[float]:
-        """Samples initial particles to initialise the integrator snippet. Should be implemented by user.
+        """Samples initial particles to initialize the integrator snippet. Should be implemented by user.
 
         Parameters
         ----------

@@ -63,7 +63,7 @@ class Integrator:
         :return: Log density of the auxiliary variables of shape (N, )
         :rtype: np.ndarray
         """
-        raise NotImplementedError("eval_logdens method not implemented.")
+        raise NotImplementedError("eval_aux_logdens method not implemented.")
 
     def update_params(self, **kwargs):
         """Updates attributes based on Stochastic Approximation of IntegratorSnippets.
@@ -183,7 +183,7 @@ class LeapfrogIntegrator(Integrator):
         :param vs: Auxiliary variables at which we evaluate the log density, has shape (N, d)
         :type vs: np.ndarray
         :return: Log density of the auxiliary variables of shape (N, )
-        :type: np.ndarray
+        :rtype: np.ndarray
         """
         return self.aux_nc - 0.5*np.einsum('ij,ji->i', vs, self.v_transform(vs).T)
 
